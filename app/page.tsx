@@ -18,7 +18,7 @@ export default function Home() {
     {/* <Nav/>
     <Hero/> */}
 
-     <div className="bg-[#f9f7f3] min-h-screen selection:bg-[#1a1714] selection:text-[#f9f7f3]">
+     <div className="bg-bg-primary min-h-screen selection:bg-accent/20 selection:text-text-primary">
       <Head>
         <title>Dr. Maya Reynolds, PsyD | Clinical Psychologist</title>
         <meta name="description" content="Licensed clinical psychologist in Santa Monica offering therapy for anxiety, trauma, and burnout." />
