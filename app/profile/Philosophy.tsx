@@ -22,7 +22,7 @@ export const Philosophy = () => {
             <FadeIn delay={0.2}>
               <div className="bg-[#f9f7f3] p-8 md:p-12 rounded-[2rem]">
                  <p className="text-xl md:text-2xl font-light leading-relaxed text-[#1a1714]">
-                  "I believe therapy works best when clients feel respected, understood, and actively involved in the process."
+                  &ldquo;I believe therapy works best when clients feel respected, understood, and actively involved in the process.&rdquo;
                 </p>
               </div>
             </FadeIn>
