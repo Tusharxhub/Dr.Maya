@@ -21,7 +21,7 @@ export const Navigation = () => {
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled ? 'py-3' : 'py-5'
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled ? 'py-1' : 'py-2'
         }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -30,8 +30,9 @@ export const Navigation = () => {
       <div className="max-w-[1500px] mx-auto px-6 relative flex items-center justify-between h-full">
         {/* Logo - Anchored Left */}
         <motion.div
-          className="text-2xl font-serif tracking-tight z-50 mix-blend-difference relative shrink-0"
+          className="text-2xl font-serif tracking-tight z-50 mix-blend-difference relative shrink-0 cursor-pointer"
           whileHover={{ scale: 1.05 }}
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           Dr. Maya Reynolds.
         </motion.div>

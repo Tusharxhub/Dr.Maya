@@ -4,7 +4,7 @@ import { FadeIn } from '../icons/FadeIn';
 
 export const MayaHero = () => {
   return (
-    <section className="min-h-screen w-full px-6 md:px-12 lg:px-24 flex flex-col justify-center pt-32 pb-20 md:pt-0 bg-bg-primary relative overflow-hidden">
+    <section className="min-h-screen w-full px-6 md:px-12 lg:px-24 flex flex-col justify-center pt-32 pb-20 md:pt-32 bg-bg-primary relative overflow-hidden">
 
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -z-10 opacity-50" />
