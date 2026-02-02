@@ -57,7 +57,7 @@ export const MayaHero = () => {
         {/* Visual Cluster - Floating Image */}
         <div className="lg:col-span-7 h-[60vh] lg:h-[80vh] relative order-1 lg:order-2 perspective-1000">
           <motion.div
-            className="w-full h-full rounded-[4rem] overflow-hidden relative shadow-2xl shadow-black/50"
+            className="w-full h-full overflow-hidden relative"
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
@@ -67,22 +67,29 @@ export const MayaHero = () => {
             <img
               src="/maya.png"
               alt="Dr. Maya"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain rounded-[25%]"
             />
 
             <motion.div
-              className="absolute bottom-16 -left-12 z-20 hidden md:block"
-              initial={{ x: -50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hidden md:block"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.8, duration: 1 }}
             >
-              <div className="float-panel p-8 rounded-2xl backdrop-blur-md bg-bg-surface/90 max-w-xs animate-float">
+              <motion.div
+                className="p-8 rounded-2xl backdrop-blur-md bg-bg-surface/90 max-w-xs shadow-2xl"
+                initial={{ y: 40, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
+              >
                 <div className="flex items-center gap-3 mb-3">
                   <Star size={18} className="text-accent fill-accent" />
-                  <span className="font-medium text-text-primary tracking-wide">Evidence-Based</span>
+                  <span className="text-sm font-bold tracking-wider text-text-primary uppercase">Clinical Excellence</span>
                 </div>
-                <p className="text-sm text-text-secondary leading-relaxed">Integrating CBT, EMDR, and Mindfulness-Based practices.</p>
-              </div>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  Providing evidence-based care and a safe space for your therapeutic journey.
+                </p>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
