@@ -2,7 +2,6 @@
 import Image from 'next/image'
 import React, { useState } from 'react'
 import MoveRight from '../icons/MoveRight'
-import { pre } from 'framer-motion/client';
 import PlayCard from '../icons/PlayCard';
 import Close from '../icons/Close';
 
@@ -72,9 +71,9 @@ const handleChange = (bg: string, textColor: string) => {
 
   <div className="flex flex-col  gap-5 relative min-h-3 py-3">
 
-    {colorPalette.map((item:any)=>(
+    {colorPalette.map((item:ColorProps)=>(
 
-      <div className="flex mt-2.5" itemID={item.id}  onClick={()=>handleChange(item.bg,item.textColor)}>
+      <div key={item.id} className="flex mt-2.5" data-itemid={item.id}  onClick={()=>handleChange(item.bg,item.textColor)}>
         <div className="h-6 w-6 rounded-l-full" style={{backgroundColor:item.bg}}></div>
          <div className="h-6 w-6 rounded-r-full" style={{backgroundColor:item.textColor}}></div>
       </div>
