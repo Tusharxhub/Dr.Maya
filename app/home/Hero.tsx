@@ -15,9 +15,8 @@ const [textColor, setTextColor] = useState("#223614");
 
 const [isopen,setIsopen]= useState(false)
 
-const handleToggle = (isopen:boolean)=>{
-
-  setIsopen((prev)=>!prev)
+const handleToggle = () => {
+  setIsopen((prev) => !prev)
 }
 
 interface ColorProps {
