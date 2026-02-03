@@ -41,14 +41,14 @@ export const Services = () => {
             <FadeIn key={idx} delay={idx * 0.2}>
               <div
                 className={`group cursor-pointer relative ${
-                  idx === 0 ? 'md:-mt-10 md:translate-x-2' : ''
+                  idx === 0 ? 'md:-mt-10 md:translate-x-2 card-rotate-1' : ''
                 } ${
                   idx === 1 ? 'md:-mt-20 md:-translate-x-1' : ''
                 } ${
                   idx === 2 ? 'md:mt-14 md:translate-x-4' : ''
                 }`}
               >
-                <div className="floating-card p-4 pb-8 bg-bg-surface/90 hover:-translate-y-3 transition-all duration-700 ease-out h-full animate-float-slow">
+                <div className="floating-card p-4 pb-8 bg-bg-surface/90 hover-bloom h-full animate-float-slow animate-breathe">
                   <div className="aspect-[4/5] overflow-hidden rounded-[12px] mb-8 relative">
                     <div className="absolute inset-0 bg-bg-primary/25 group-hover:bg-transparent transition-all duration-500 z-10" />
                     <motion.img

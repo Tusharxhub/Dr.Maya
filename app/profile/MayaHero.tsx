@@ -27,22 +27,22 @@ export const MayaHero = () => {
                 </span>
               </div>
 
-              <div className="relative mb-12 animate-float">
-                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-text-primary">
+              <div className="relative mb-12 animate-float animate-breathe">
+                <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-text-primary tracking-wide">
                   Healing <br />
                   <span className="italic font-light text-text-secondary">Through</span> <br />
                   Presence.
                 </h1>
               </div>
 
-              <div className="float-panel p-8 rounded-2xl max-w-lg mb-12 backdrop-blur-sm bg-bg-surface/80 animate-float-delayed">
+              <div className="float-panel p-8 rounded-2xl max-w-lg mb-12 backdrop-blur-sm bg-bg-surface/80 animate-float-delayed animate-breathe hover-bloom">
                 <p className="text-lg md:text-xl text-text-secondary leading-relaxed font-light">
                   A collaborative space for adults navigating anxiety, trauma, and burnout in Santa Monica, CA.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="px-8 py-4 bg-accent text-bg-primary rounded-full hover:bg-white transition-all duration-300 flex items-center justify-center gap-3 group shadow-[0_0_20px_rgba(102,252,241,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] hover:-translate-y-1">
+                <button className="px-9 py-4 bg-accent/95 text-bg-primary rounded-full transition-all duration-300 flex items-center justify-center gap-3 group shadow-[0_14px_30px_rgba(102,252,241,0.3)] hover:shadow-[0_20px_38px_rgba(102,252,241,0.4)] hover:-translate-y-1">
                   <span className="tracking-wide text-sm font-bold">Schedule Consultation</span>
                   <ArrowRight size={16} className="text-bg-primary group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -77,7 +77,7 @@ export const MayaHero = () => {
               transition={{ delay: 0.8, duration: 1 }}
             >
               <motion.div
-                className="p-8 rounded-2xl backdrop-blur-md bg-bg-surface/90 max-w-xs shadow-2xl"
+                className="p-8 rounded-2xl backdrop-blur-md bg-bg-surface/90 max-w-xs shadow-2xl animate-breathe"
                 initial={{ y: 40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.2, duration: 0.8 }}

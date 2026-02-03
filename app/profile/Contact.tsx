@@ -24,7 +24,7 @@ export const Contact = () => {
           </FadeIn>
 
           <FadeIn delay={0.3}>
-            <div className="floating-card p-10 md:p-16 backdrop-blur-md bg-bg-surface/85 animate-float-slow">
+            <div className="floating-card p-10 md:p-16 backdrop-blur-md bg-bg-surface/85 animate-float-slow animate-breathe hover-bloom border border-white/5">
               <h3 className="font-serif text-3xl mb-10 text-text-primary">Request a Consultation</h3>
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -32,15 +32,15 @@ export const Contact = () => {
                   <InputField label="Last Name" placeholder="Dey" />
                 </div>
                 <InputField label="Email" type="email" placeholder="abc@domain.com" />
-                <div className="space-y-3">
-                  <label className="text-xs font-bold uppercase tracking-wider text-text-secondary/70">Message</label>
+                <div className="space-y-3 group">
+                  <label className="text-xs font-bold uppercase tracking-wider text-text-secondary/70 transition-colors duration-300 group-focus-within:text-accent/90">Message</label>
                   <textarea
                     rows={4}
-                    className="w-full bg-bg-primary/45 text-text-primary border border-white/5 rounded-[12px] p-6 focus:ring-1 focus:ring-accent outline-none focus:shadow-[0_0_0_4px_rgba(102,252,241,0.12)] transition-all placeholder:text-text-secondary/30 resize-none hover:bg-bg-primary/60"
+                    className="w-full bg-bg-primary/45 text-text-primary border border-white/5 rounded-[12px] p-6 shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] focus:ring-1 focus:ring-accent outline-none focus:shadow-[0_0_0_4px_rgba(102,252,241,0.14),inset_0_2px_8px_rgba(0,0,0,0.2)] transition-all placeholder:text-text-secondary/30 resize-none hover:bg-bg-primary/60 hover:border-white/10"
                     placeholder="Tell me a little about what brings you here..."
                   />
                 </div>
-                <button className="w-full bg-accent text-bg-primary py-5 rounded-xl hover:bg-white transition-all duration-300 font-bold tracking-wide shadow-[0_0_20px_rgba(102,252,241,0.2)] hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:-translate-y-1 mt-4">
+                <button className="w-full bg-accent/95 text-bg-primary py-5 rounded-[12px] transition-all duration-300 font-semibold tracking-wide shadow-[0_14px_30px_rgba(102,252,241,0.25)] hover:shadow-[0_20px_38px_rgba(102,252,241,0.35)] hover:-translate-y-0.5 mt-4">
                   Send Message
                 </button>
               </form>
@@ -74,11 +74,11 @@ const ContactItem = ({ icon, label, text }: { icon: React.ReactNode, label: stri
 );
 
 const InputField = ({ label, type = "text", placeholder }: { label: string, type?: string, placeholder: string }) => (
-  <div className="space-y-3">
-    <label className="text-xs font-bold uppercase tracking-wider text-text-secondary/70">{label}</label>
+  <div className="relative space-y-3 group">
+    <label className="text-xs font-bold uppercase tracking-wider text-text-secondary/70 transition-colors duration-300 group-focus-within:text-accent/90">{label}</label>
     <input
       type={type}
-      className="w-full bg-bg-primary/45 text-text-primary border border-white/5 rounded-[12px] p-6 focus:ring-1 focus:ring-accent outline-none focus:shadow-[0_0_0_4px_rgba(102,252,241,0.12)] transition-all placeholder:text-text-secondary/30 hover:bg-bg-primary/60"
+      className="w-full bg-bg-primary/45 text-text-primary border border-white/5 rounded-[12px] p-6 shadow-[inset_0_2px_8px_rgba(0,0,0,0.3)] focus:ring-1 focus:ring-accent outline-none focus:shadow-[0_0_0_4px_rgba(102,252,241,0.14),inset_0_2px_8px_rgba(0,0,0,0.2)] transition-all placeholder:text-text-secondary/30 hover:bg-bg-primary/60 hover:border-white/10"
       placeholder={placeholder}
     />
   </div>

@@ -23,7 +23,7 @@ export const Philosophy = () => {
 
           <div className="md:col-span-8 space-y-16">
             <FadeIn delay={0.2}>
-              <div className="floating-card p-10 md:p-14 bg-bg-surface/70 backdrop-blur-sm -rotate-1 hover:rotate-0 transition-transform duration-700 ease-out animate-float-slow">
+              <div className="floating-card p-10 md:p-14 bg-bg-surface/70 backdrop-blur-sm -rotate-1 hover:rotate-0 transition-transform duration-700 ease-out animate-float-slow animate-breathe hover-bloom card-rotate-2">
                 <p className="text-xl md:text-3xl font-light leading-relaxed text-text-primary/90">
                   &ldquo;I believe therapy works best when clients feel respected, understood, and actively involved in the process.&rdquo;
                 </p>
@@ -32,13 +32,13 @@ export const Philosophy = () => {
 
             <FadeIn delay={0.4}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 animate-float-slow">
+                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 animate-float-slow animate-breathe hover-bloom card-rotate-1">
                   <h4 className="font-serif text-2xl text-text-primary mb-4">Practical Tools</h4>
                   <p className="text-text-secondary leading-relaxed font-light">
                     Sessions are structured enough to feel supportive, leaving space for reflection. I use CBT to address thought patterns and body-oriented techniques to address physiology.
                   </p>
                 </div>
-                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 delay-100 animate-float-slow">
+                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 delay-100 animate-float-slow animate-breathe hover-bloom card-rotate-3">
                   <h4 className="font-serif text-2xl text-text-primary mb-4">Depth & Insight</h4>
                   <p className="text-text-secondary leading-relaxed font-light">
                     Beyond symptom relief, my goal is to help you develop resilience and a stronger relationship with yourself over time.

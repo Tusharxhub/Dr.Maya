@@ -28,9 +28,10 @@
   body {
     background-color: var(--bg-primary);
     background-image:
-      radial-gradient(1200px 800px at 70% -10%, rgba(255, 255, 255, 0.06), transparent 60%),
-      radial-gradient(900px 600px at 0% 20%, rgba(102, 252, 241, 0.05), transparent 55%),
-      radial-gradient(1200px 900px at 50% 120%, rgba(0, 0, 0, 0.65), transparent 55%);
+      radial-gradient(1200px 800px at 70% -10%, rgba(255, 255, 255, 0.07), transparent 60%),
+      radial-gradient(900px 600px at 0% 20%, rgba(102, 252, 241, 0.06), transparent 55%),
+      radial-gradient(1200px 900px at 50% 120%, rgba(0, 0, 0, 0.7), transparent 55%),
+      radial-gradient(800px 600px at 50% 50%, rgba(255, 200, 150, 0.015), transparent 70%);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -99,5 +100,46 @@
 
   .animate-float-slow {
     animation: float-slow 12s ease-in-out infinite;
+  }
+
+  /* Breathe Fade Animation */
+  @keyframes breathe {
+    0%, 100% {
+      opacity: 0.85;
+      transform: scale(0.99);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-breathe {
+    animation: breathe 8s ease-in-out infinite;
+  }
+
+  /* Bloom Glow on Hover */
+  .hover-bloom {
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .hover-bloom:hover {
+    box-shadow:
+      0 20px 44px -28px rgba(0, 0, 0, 0.75),
+      0 0 44px rgba(102, 252, 241, 0.14);
+    transform: translateY(-1.5px);
+  }
+
+  /* Slight Rotation Variance for Cards */
+  .card-rotate-1 {
+    transform: rotate(0.8deg);
+  }
+
+  .card-rotate-2 {
+    transform: rotate(-1.2deg);
+  }
+
+  .card-rotate-3 {
+    transform: rotate(1.5deg);
   }
 }
