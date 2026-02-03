@@ -56,6 +56,8 @@ export const Services = () => {
                       transition={{ duration: 1.2, ease: "easeOut" }}
                       src={item.image}
                       alt={item.title}
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-full object-cover opacity-75 group-hover:opacity-90 transition-all duration-700"
                     />
                   </div>

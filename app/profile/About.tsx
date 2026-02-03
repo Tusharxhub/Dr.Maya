@@ -15,7 +15,7 @@ export const AboutSection = () => {
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.8 }}
               >
-                <img src="/office1.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office interior" />
+                <img src="/office1.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office interior" loading="lazy" decoding="async" />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-primary/50 to-transparent" />
               </motion.div>
 
@@ -24,7 +24,7 @@ export const AboutSection = () => {
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
-                <img src="/office2.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office detail" />
+                <img src="/office2.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office detail" loading="lazy" decoding="async" />
               </motion.div>             
             </div>
           </FadeIn>

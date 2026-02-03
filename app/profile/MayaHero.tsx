@@ -67,6 +67,8 @@ export const MayaHero = () => {
             <img
               src="/maya.png"
               alt="Dr. Maya"
+              loading="eager"
+              decoding="async"
               className="w-full h-full object-contain rounded-[25%]"
             />
 

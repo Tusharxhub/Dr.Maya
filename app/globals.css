@@ -198,6 +198,23 @@
     transform: translateY(-2px);
   }
 
+  /* Motion safety: honor prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-float,
+    .animate-float-delayed,
+    .animate-float-slow,
+    .animate-breathe {
+      animation: none !important;
+    }
+
+    .hover-bloom,
+    .hover-bloom:hover {
+      transition: none !important;
+      transform: none !important;
+      box-shadow: none !important;
+    }
+  }
+
   /* Slight Rotation Variance for Cards */
   .card-rotate-1 {
     transform: rotate(0.8deg);
