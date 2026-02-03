@@ -34,7 +34,7 @@ export const Navigation = () => {
       animate={{ y: 0, opacity: navOpacity }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="max-w-[1500px] mx-auto px-6 relative flex items-center justify-between">
+      <div className="section-container px-6 relative flex items-center justify-between">
         {/* Logo - Anchored Left */}
         <motion.div
           className="text-2xl font-serif tracking-tight z-50 relative shrink-0 cursor-pointer text-text-primary"
@@ -46,8 +46,8 @@ export const Navigation = () => {
 
         {/* Desktop Menu - Right Corner */}
         <div className={`hidden md:flex items-center gap-10 px-6 py-2.5 rounded-full backdrop-blur-md transition-all duration-500 ${scrolled
-          ? 'bg-bg-surface/70 shadow-[0_14px_32px_rgba(0,0,0,0.45)]'
-          : 'bg-bg-surface/55 shadow-[0_10px_24px_rgba(0,0,0,0.35)]'
+          ? 'bg-bg-surface/70 shadow-elevated'
+          : 'bg-bg-surface/55 shadow-elevated-sm'
           }`}>
           <div className="flex items-center gap-9">
             {links.map((link) => (
@@ -63,7 +63,7 @@ export const Navigation = () => {
           </div>
           <a
             href="#contact"
-            className="px-5 py-2.5 rounded-full bg-accent/90 text-bg-primary text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_10px_24px_rgba(102,252,241,0.25)] hover:shadow-[0_18px_34px_rgba(102,252,241,0.35)] hover:-translate-y-0.5"
+            className="px-5 py-2.5 rounded-full bg-accent/90 text-bg-primary text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-accent-sm hover:shadow-accent-hover hover:-translate-y-0.5"
           >
             Book Now
           </a>
@@ -120,13 +120,13 @@ export const Navigation = () => {
               transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               <motion.div
-                className="mx-4 mt-20 mb-6 bg-bg-surface/70 backdrop-blur-md rounded-3xl px-8 py-10 shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+                className="mx-4 mt-20 mb-6 bg-bg-surface/70 backdrop-blur-md rounded-3xl px-8 py-12 shadow-elevated-lg"
                 initial={{ y: -20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: -10, opacity: 0 }}
                 transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               >
-                <div className="space-y-6 text-center">
+                <div className="space-y-7 text-center">
                   {links.map((link, index) => (
                     <motion.a
                       key={link.name}

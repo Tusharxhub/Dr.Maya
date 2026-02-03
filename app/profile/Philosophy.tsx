@@ -2,12 +2,12 @@ import { FadeIn } from "../icons/FadeIn";
 
 export const Philosophy = () => {
   return (
-    <section id="philosophy" className="w-full px-6 md:px-12 lg:px-24 py-32 md:py-48 bg-bg-primary relative">
+    <section id="philosophy" className="w-full section-pad bg-bg-primary relative">
       {/* Background Elements */}
       <div className="absolute top-1/2 left-0 w-full h-[1px] bg-bg-surface/50 opacity-50" />
 
-      <div className="max-w-[1500px] mx-auto relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-16 lg:gap-24">
+      <div className="section-container relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-20 lg:gap-28">
           <div className="md:col-span-4">
             <FadeIn>
               <div className="sticky top-32">

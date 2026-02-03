@@ -21,10 +21,10 @@ const specialties = [
 
 export const Services = () => {
   return (
-    <section id="services" className="w-full px-6 md:px-12 lg:px-24 py-32 md:py-48 bg-bg-primary text-text-primary">
-      <div className="max-w-[1500px] mx-auto">
+    <section id="services" className="w-full section-pad bg-bg-primary text-text-primary">
+      <div className="section-container">
         <FadeIn>
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-28 md:mb-24 gap-12">
             <h2 className="font-serif text-5xl md:text-7xl max-w-xl leading-[0.9]">
               Areas of <span className="italic text-text-secondary/60">Focus</span>
             </h2>
@@ -36,7 +36,7 @@ export const Services = () => {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 pl-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-16 pl-4">
           {specialties.map((item, idx) => (
             <FadeIn key={idx} delay={idx * 0.2}>
               <div
@@ -49,7 +49,7 @@ export const Services = () => {
                 }`}
               >
                 <div className="floating-card p-4 pb-8 bg-bg-surface/90 hover-bloom h-full animate-float-slow animate-breathe">
-                  <div className="aspect-[4/5] overflow-hidden rounded-[12px] mb-8 relative">
+                  <div className="aspect-[4/5] overflow-hidden radius-card mb-8 relative">
                     <div className="absolute inset-0 bg-bg-primary/25 group-hover:bg-transparent transition-all duration-500 z-10" />
                     <motion.img
                       whileHover={{ scale: 1.03 }}

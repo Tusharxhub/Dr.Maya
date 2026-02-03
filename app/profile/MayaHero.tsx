@@ -4,12 +4,12 @@ import { FadeIn } from '../icons/FadeIn';
 
 export const MayaHero = () => {
   return (
-    <section className="min-h-screen w-full px-6 md:px-12 lg:px-24 flex flex-col justify-center pt-32 pb-20 md:pt-32 bg-bg-primary relative overflow-hidden">
+    <section className="min-h-screen w-full px-6 md:px-12 lg:px-24 flex flex-col justify-center pt-32 pb-24 md:pt-40 md:pb-32 bg-bg-primary relative overflow-hidden">
 
       {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[120px] -z-10 opacity-50" />
 
-      <div className="max-w-[1800px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+      <div className="max-w-[1800px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-20 md:gap-28 lg:gap-24 items-center">
 
         {/* Text Cluster - Floating Panel */}
         <div className="lg:col-span-5 z-10 order-2 lg:order-1">
@@ -27,7 +27,7 @@ export const MayaHero = () => {
                 </span>
               </div>
 
-              <div className="relative mb-12 animate-float animate-breathe">
+              <div className="relative mb-14 md:mb-12 animate-float animate-breathe">
                 <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl leading-[0.95] text-text-primary tracking-wide">
                   Healing <br />
                   <span className="italic font-light text-text-secondary">Through</span> <br />
@@ -42,7 +42,7 @@ export const MayaHero = () => {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="px-9 py-4 bg-accent/95 text-bg-primary rounded-full transition-all duration-300 flex items-center justify-center gap-3 group shadow-[0_14px_30px_rgba(102,252,241,0.3)] hover:shadow-[0_20px_38px_rgba(102,252,241,0.4)] hover:-translate-y-1">
+                <button className="px-9 py-4 bg-accent/95 text-bg-primary rounded-full transition-all duration-300 flex items-center justify-center gap-3 group shadow-accent hover:shadow-accent-lg hover:-translate-y-1">
                   <span className="tracking-wide text-sm font-bold">Schedule Consultation</span>
                   <ArrowRight size={16} className="text-bg-primary group-hover:translate-x-1 transition-transform" />
                 </button>

@@ -4,14 +4,14 @@ import { FadeIn } from '../icons/FadeIn';
 
 export const AboutSection = () => {
   return (
-    <section id="about" className="w-full px-6 md:px-12 lg:px-24 py-32 md:py-48 bg-bg-primary">
-      <div className="max-w-[1500px] mx-auto">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+    <section id="about" className="w-full section-pad bg-bg-primary">
+      <div className="section-container">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-28 lg:gap-24 items-center">
           <FadeIn>
             <div className="relative w-full max-w-lg mx-auto lg:mx-0 min-h-[600px]">
               {/* Use float-panel for images */}
               <motion.div
-                className="absolute top-0 right-0 w-3/4 h-[500px] rounded-[12px] overflow-hidden floating-card z-10 animate-float-slow animate-breathe shadow-[0_0_80px_rgba(102,252,241,0.08)]"
+                className="absolute top-0 right-0 w-3/4 h-[500px] radius-card overflow-hidden floating-card z-10 animate-float-slow animate-breathe shadow-halo"
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.8 }}
               >
@@ -20,7 +20,7 @@ export const AboutSection = () => {
               </motion.div>
 
               <motion.div
-                className="absolute bottom-0 left-0 w-2/3 h-[400px] rounded-[12px] overflow-hidden floating-card z-20 animate-float-slow animate-breathe shadow-[0_0_80px_rgba(102,252,241,0.08)]"
+                className="absolute bottom-0 left-0 w-2/3 h-[400px] radius-card overflow-hidden floating-card z-20 animate-float-slow animate-breathe shadow-halo"
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
