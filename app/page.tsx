@@ -26,7 +26,7 @@ export default function Home() {
 
       <Navigation />
       
-      <main>
+      <main className="space-y-24 md:space-y-32 lg:space-y-40 pb-24">
         <MayaHero />
         <Philosophy />
         <Services />

@@ -11,8 +11,8 @@ export const AboutSection = () => {
             <div className="relative w-full max-w-lg mx-auto lg:mx-0 min-h-[600px]">
               {/* Use float-panel for images */}
               <motion.div
-                className="absolute top-0 right-0 w-3/4 h-[500px] rounded-[3rem] overflow-hidden float-panel z-10"
-                whileHover={{ y: -10 }}
+                className="absolute top-0 right-0 w-3/4 h-[500px] rounded-[12px] overflow-hidden floating-card z-10 animate-float-slow"
+                whileHover={{ y: -6 }}
                 transition={{ duration: 0.8 }}
               >
                 <img src="/office1.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office interior" />
@@ -20,8 +20,8 @@ export const AboutSection = () => {
               </motion.div>
 
               <motion.div
-                className="absolute bottom-0 left-0 w-2/3 h-[400px] rounded-[3rem] overflow-hidden float-panel z-20"
-                whileHover={{ y: -10 }}
+                className="absolute bottom-0 left-0 w-2/3 h-[400px] rounded-[12px] overflow-hidden floating-card z-20 animate-float-slow"
+                whileHover={{ y: -6 }}
                 transition={{ duration: 0.8, delay: 0.1 }}
               >
                 <img src="/office2.jpeg" className="w-full h-full object-cover opacity-90" alt="Therapy office detail" />

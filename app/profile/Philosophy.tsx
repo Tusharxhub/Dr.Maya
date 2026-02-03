@@ -23,7 +23,7 @@ export const Philosophy = () => {
 
           <div className="md:col-span-8 space-y-16">
             <FadeIn delay={0.2}>
-              <div className="float-panel p-10 md:p-14 rounded-3xl backdrop-blur-sm bg-bg-surface/60 -rotate-1 hover:rotate-0 transition-transform duration-700 ease-out">
+              <div className="floating-card p-10 md:p-14 bg-bg-surface/70 backdrop-blur-sm -rotate-1 hover:rotate-0 transition-transform duration-700 ease-out animate-float-slow">
                 <p className="text-xl md:text-3xl font-light leading-relaxed text-text-primary/90">
                   &ldquo;I believe therapy works best when clients feel respected, understood, and actively involved in the process.&rdquo;
                 </p>
@@ -32,13 +32,13 @@ export const Philosophy = () => {
 
             <FadeIn delay={0.4}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-                <div className="float-panel p-8 rounded-2xl bg-bg-surface hover:-translate-y-2 transition-transform duration-500">
+                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 animate-float-slow">
                   <h4 className="font-serif text-2xl text-text-primary mb-4">Practical Tools</h4>
                   <p className="text-text-secondary leading-relaxed font-light">
                     Sessions are structured enough to feel supportive, leaving space for reflection. I use CBT to address thought patterns and body-oriented techniques to address physiology.
                   </p>
                 </div>
-                <div className="float-panel p-8 rounded-2xl bg-bg-surface hover:-translate-y-2 transition-transform duration-500 delay-100">
+                <div className="floating-card p-8 bg-bg-surface/85 hover:-translate-y-2 transition-transform duration-500 delay-100 animate-float-slow">
                   <h4 className="font-serif text-2xl text-text-primary mb-4">Depth & Insight</h4>
                   <p className="text-text-secondary leading-relaxed font-light">
                     Beyond symptom relief, my goal is to help you develop resilience and a stronger relationship with yourself over time.

@@ -36,21 +36,27 @@ export const Services = () => {
           </div>
         </FadeIn>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 pl-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-14 pl-4">
           {specialties.map((item, idx) => (
             <FadeIn key={idx} delay={idx * 0.2}>
               <div
-                className={`group cursor-pointer relative ${idx === 1 ? 'md:-mt-16' : ''} ${idx === 2 ? 'md:mt-16' : ''}`}
+                className={`group cursor-pointer relative ${
+                  idx === 0 ? 'md:-mt-10 md:translate-x-2' : ''
+                } ${
+                  idx === 1 ? 'md:-mt-20 md:-translate-x-1' : ''
+                } ${
+                  idx === 2 ? 'md:mt-14 md:translate-x-4' : ''
+                }`}
               >
-                <div className="float-panel p-4 pb-8 rounded-3xl bg-bg-surface hover:-translate-y-4 transition-all duration-700 ease-out h-full">
-                  <div className="aspect-[4/5] overflow-hidden rounded-2xl mb-8 relative">
-                    <div className="absolute inset-0 bg-bg-primary/20 group-hover:bg-transparent transition-all duration-500 z-10" />
+                <div className="floating-card p-4 pb-8 bg-bg-surface/90 hover:-translate-y-3 transition-all duration-700 ease-out h-full animate-float-slow">
+                  <div className="aspect-[4/5] overflow-hidden rounded-[12px] mb-8 relative">
+                    <div className="absolute inset-0 bg-bg-primary/25 group-hover:bg-transparent transition-all duration-500 z-10" />
                     <motion.img
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ scale: 1.03 }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
                       src={item.image}
                       alt={item.title}
-                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-700"
+                      className="w-full h-full object-cover opacity-75 group-hover:opacity-90 transition-all duration-700"
                     />
                   </div>
                   <div className="px-4">
