@@ -37,8 +37,8 @@ export const Navigation = () => {
           Dr. Maya Reynolds.
         </motion.div>
 
-        {/* Desktop Menu - Absolute Center */}
-        <div className={`hidden md:flex items-center gap-8 pl-10 pr-2 py-2 rounded-full backdrop-blur-md transition-all duration-500 absolute left-1/2 -translate-x-1/2 ${scrolled
+        {/* Desktop Menu - Right Corner */}
+        <div className={`hidden md:flex items-center gap-8 pl-10 pr-2 py-2 rounded-full backdrop-blur-md transition-all duration-500 absolute right-[-200px] top-1/2 -translate-y-1/2 ${scrolled
           ? 'bg-bg-surface/90 border border-white/5 shadow-2xl shadow-black/50'
           : 'bg-white/5 border border-white/5 shadow-lg shadow-black/10'
           }`}>
