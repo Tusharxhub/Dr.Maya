@@ -1,14 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+  const lastScrollY = useRef(0);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    const handleScroll = () => {
+      const currentY = window.scrollY;
+      setScrolled(currentY > 50);
+
+      if (currentY < 80) {
+        setIsHidden(false);
+      } else if (currentY > lastScrollY.current) {
+        setIsHidden(true);
+      } else if (currentY < lastScrollY.current) {
+        setIsHidden(false);
+      }
+
+      lastScrollY.current = currentY;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -24,8 +40,8 @@ export const Navigation = () => {
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled ? 'py-1' : 'py-2'
         }`}
       initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      animate={{ y: isHidden ? -120 : 0 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
       <div className="max-w-[1500px] mx-auto px-6 relative flex items-center justify-between h-full">
         {/* Logo - Anchored Left */}
