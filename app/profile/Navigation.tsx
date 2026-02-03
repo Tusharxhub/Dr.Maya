@@ -1,27 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isHidden, setIsHidden] = useState(false);
-  const lastScrollY = useRef(0);
+  const [hasScrolled, setHasScrolled] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentY = window.scrollY;
       setScrolled(currentY > 50);
-
-      if (currentY < 80) {
-        setIsHidden(false);
-      } else if (currentY > lastScrollY.current) {
-        setIsHidden(true);
-      } else if (currentY < lastScrollY.current) {
-        setIsHidden(false);
-      }
-
-      lastScrollY.current = currentY;
+      if (currentY > 40 && !hasScrolled) setHasScrolled(true);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -32,47 +21,49 @@ export const Navigation = () => {
     { name: 'Philosophy', href: '#philosophy' },
     { name: 'Services', href: '#services' },
     { name: 'About', href: '#about' },
-    { name: 'Connect', href: '#contact' },
+    { name: 'Contact', href: '#contact' },
   ];
+
+  const navOpacity = hasScrolled ? 1 : 0.98;
 
   return (
     <motion.nav
-      className={`fixed top-0 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled ? 'py-1' : 'py-2'
+      className={`fixed top-4 left-0 w-full z-50 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${scrolled ? 'py-1.5' : 'py-2.5'
         }`}
-      initial={{ y: -100 }}
-      animate={{ y: isHidden ? -120 : 0 }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: navOpacity }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      <div className="max-w-[1500px] mx-auto px-6 relative flex items-center justify-between h-full">
+      <div className="max-w-[1500px] mx-auto px-6 relative flex items-center justify-between">
         {/* Logo - Anchored Left */}
         <motion.div
-          className="text-2xl font-serif tracking-tight z-50 mix-blend-difference relative shrink-0 cursor-pointer"
-          whileHover={{ scale: 1.05 }}
+          className="text-2xl font-serif tracking-tight z-50 relative shrink-0 cursor-pointer text-text-primary"
+          whileHover={{ y: -1 }}
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
           Dr. Maya Reynolds.
         </motion.div>
 
         {/* Desktop Menu - Right Corner */}
-        <div className={`hidden md:flex items-center gap-8 pl-10 pr-2 py-2 rounded-full backdrop-blur-md transition-all duration-500 absolute right-[-200px] top-1/2 -translate-y-1/2 ${scrolled
-          ? 'bg-bg-surface/90 border border-white/5 shadow-2xl shadow-black/50'
-          : 'bg-white/5 border border-white/5 shadow-lg shadow-black/10'
+        <div className={`hidden md:flex items-center gap-10 px-6 py-2.5 rounded-full backdrop-blur-md transition-all duration-500 ${scrolled
+          ? 'bg-bg-surface/70 shadow-[0_14px_32px_rgba(0,0,0,0.45)]'
+          : 'bg-bg-surface/55 shadow-[0_10px_24px_rgba(0,0,0,0.35)]'
           }`}>
-          <div className="flex gap-8">
+          <div className="flex items-center gap-9">
             {links.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="relative text-xs uppercase tracking-[0.2em] text-text-secondary hover:text-accent transition-colors font-medium group py-2"
+                className="relative text-xs uppercase tracking-[0.12em] text-text-secondary transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] font-medium group py-2 leading-none hover:opacity-85 hover:-translate-y-0.5"
               >
                 {link.name}
-                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-accent transition-all duration-300 group-hover:w-full opacity-0 group-hover:opacity-100" />
+                <span className="absolute -bottom-1 left-0 w-full h-[1px] bg-text-primary/30 transition-opacity duration-300 opacity-0 group-hover:opacity-100" />
               </a>
             ))}
           </div>
           <a
             href="#contact"
-            className="px-6 py-3 rounded-full bg-accent text-bg-primary text-xs font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 shadow-[0_0_10px_rgba(102,252,241,0.3)] hover:shadow-[0_0_20px_rgba(102,252,241,0.5)]"
+            className="px-5 py-2.5 rounded-full bg-accent/90 text-bg-primary text-xs font-semibold uppercase tracking-[0.12em] transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] shadow-[0_10px_24px_rgba(102,252,241,0.25)] hover:shadow-[0_18px_34px_rgba(102,252,241,0.35)] hover:-translate-y-0.5"
           >
             Book Now
           </a>
@@ -82,30 +73,78 @@ export const Navigation = () => {
         <div className="flex items-center gap-4">
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden z-50 text-text-primary hover:text-accent transition-colors p-2"
+            className="md:hidden z-50 text-text-primary transition-colors p-2"
             aria-label="Toggle Menu"
           >
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <span className="sr-only">Toggle Menu</span>
+            <motion.span
+              className="relative block w-8 h-8"
+              animate={isOpen ? 'open' : 'closed'}
+            >
+              <motion.span
+                className="absolute left-1/2 top-2 block h-[2px] w-6 -translate-x-1/2 rounded-full bg-text-primary"
+                variants={{
+                  closed: { rotate: 0, y: 0, opacity: 1 },
+                  open: { rotate: 45, y: 6, opacity: 1 },
+                }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <motion.span
+                className="absolute left-1/2 top-1/2 block h-[2px] w-6 -translate-x-1/2 -translate-y-1/2 rounded-full bg-text-primary"
+                variants={{
+                  closed: { opacity: 1 },
+                  open: { opacity: 0 },
+                }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              />
+              <motion.span
+                className="absolute left-1/2 bottom-2 block h-[2px] w-6 -translate-x-1/2 rounded-full bg-text-primary"
+                variants={{
+                  closed: { rotate: 0, y: 0, opacity: 1 },
+                  open: { rotate: -45, y: -6, opacity: 1 },
+                }}
+                transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              />
+            </motion.span>
           </button>
         </div>
 
         {/* Mobile Overlay */}
-        <motion.div
-          className="fixed inset-0 bg-bg-primary/95 backdrop-blur-xl z-40 flex flex-col items-center justify-center space-y-12"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: isOpen ? 1 : 0, pointerEvents: isOpen ? 'auto' : 'none' }}
-        >
-          {links.map((link) => (
-            <a
-              key={link.name}
-              href={link.href}
-              onClick={() => setIsOpen(false)}
-              className="text-4xl font-serif text-text-primary hover:text-accent transition-colors italic"
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              className="fixed inset-x-0 top-0 bg-bg-primary/85 backdrop-blur-xl z-40"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
-              {link.name}
-            </a>
-          ))}
-        </motion.div>
+              <motion.div
+                className="mx-4 mt-20 mb-6 bg-bg-surface/70 backdrop-blur-md rounded-3xl px-8 py-10 shadow-[0_18px_40px_rgba(0,0,0,0.45)]"
+                initial={{ y: -20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: -10, opacity: 0 }}
+                transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              >
+                <div className="space-y-6 text-center">
+                  {links.map((link, index) => (
+                    <motion.a
+                      key={link.name}
+                      href={link.href}
+                      onClick={() => setIsOpen(false)}
+                      className="text-3xl font-serif text-text-primary italic block"
+                      initial={{ opacity: 0, y: 8 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.4, delay: 0.08 * index, ease: [0.22, 1, 0.36, 1] }}
+                    >
+                      {link.name}
+                    </motion.a>
+                  ))}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );
