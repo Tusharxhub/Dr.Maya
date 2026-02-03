@@ -10,7 +10,7 @@ const specialties = [
   {
     title: "Trauma & EMDR",
     desc: "Carefully paced trauma work focusing on safety, stabilization, and processing difficult memories.",
-    image: "https://images.unsplash.com/photo-1501630834273-4b5604d2ee31?auto=format&fit=crop&q=80&w=1000"
+    image: "https://plus.unsplash.com/premium_photo-1664643217182-dbcf9c719aa1?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   },
   {
     title: "Burnout & Stress",
