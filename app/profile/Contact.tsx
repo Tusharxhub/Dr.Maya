@@ -28,10 +28,10 @@ export const Contact = () => {
               <h3 className="font-serif text-3xl mb-10 text-text-primary">Request a Consultation</h3>
               <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <InputField label="First Name" placeholder="Jane" />
-                  <InputField label="Last Name" placeholder="Doe" />
+                  <InputField label="First Name" placeholder="Tushar" />
+                  <InputField label="Last Name" placeholder="Dey" />
                 </div>
-                <InputField label="Email" type="email" placeholder="jane@example.com" />
+                <InputField label="Email" type="email" placeholder="abc@domain.com" />
                 <div className="space-y-3">
                   <label className="text-xs font-bold uppercase tracking-wider text-text-secondary/70">Message</label>
                   <textarea
@@ -49,7 +49,7 @@ export const Contact = () => {
         </div>
 
         <div className="mt-32 pt-12 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-text-secondary/40 text-sm tracking-widest uppercase">
-          <p>© 2024 Dr. Maya Reynolds, PsyD. All rights reserved.</p>
+          <p>© 2025 Dr. Maya Reynolds, PsyD. All rights reserved.</p>
           <div className="flex gap-8 mt-6 md:mt-0">
             <a href="#" className="hover:text-text-primary transition-colors">Instagram</a>
             <a href="#" className="hover:text-text-primary transition-colors">Psychology Today</a>
