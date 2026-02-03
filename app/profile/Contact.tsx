@@ -3,7 +3,7 @@ import { FadeIn } from '../icons/FadeIn';
 
 export const Contact = () => {
   return (
-    <section id="contact" className="w-full px-6 md:px-12 lg:px-24 py-32 md:py-48 bg-bg-primary text-text-primary">
+    <section id="contact" className="w-full px-6 md:px-12 lg:px-24 py-32 md:py-48 bg-bg-primary texRequest a Consultationt-text-primary">
       <div className="max-w-[1500px] mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-24 lg:gap-32">
           <FadeIn>
